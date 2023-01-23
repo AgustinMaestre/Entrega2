@@ -97,7 +97,7 @@ const productRemplazo = {
 }
 const run = async () => {
     try{
-    const products = new ProductManager("./entregables/products.json")
+    const products = new ProductManager("products.json")
     await products.addProduct(product1)
     await products.addProduct(product2)
     console.log("primera consulta", await products.getProducts())
@@ -105,8 +105,6 @@ const run = async () => {
     await products.updateProduct(2, productRemplazo)
     console.log("segunda consulta", await products.getProducts())
     console.log("byId", await products.getById(2))
-    // await products.deleteById(2)
-    // await products.deleteAll()    
     }
     catch{
         console.log("Houston tenemos un problema")
